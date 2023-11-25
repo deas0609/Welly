@@ -95,7 +95,7 @@ export default function HomePageComponent() {
             setIsLoggedIn(!isLoggedIn)
           }}
         />
-        <label for="show">勾選顯示</label>
+        <label htmlFor="show">勾選顯示</label>
         {isLoggedIn ? (
           <>
             <p>已勾選</p>

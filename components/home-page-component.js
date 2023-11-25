@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import Counter from './counter'
 export default function HomePageComponent() {
   // 第一題
   const [stringReverse, setStringReverse] = useState('')
@@ -30,6 +30,8 @@ export default function HomePageComponent() {
       lastName || ''
     }`
   }
+  // 第四題
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   return (
     <>
@@ -82,6 +84,30 @@ export default function HomePageComponent() {
           }}
         />
         <h3>{formatName(lastName, firstName)}</h3>
+      </div>
+      {/* 第四題 */}
+      <div>
+        <h2>4.React: 條件渲染</h2>
+        <input
+          type="checkbox"
+          id="show"
+          onChange={() => {
+            setIsLoggedIn(!isLoggedIn)
+          }}
+        />
+        <label for="show">勾選顯示</label>
+        {isLoggedIn ? (
+          <>
+            <p>已勾選</p>
+          </>
+        ) : (
+          <></>
+        )}
+      </div>
+      {/* 第五題 */}
+      <div>
+        <h2>React: 組件</h2>
+        <Counter />
       </div>
     </>
   )
